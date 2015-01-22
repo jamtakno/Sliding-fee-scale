@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115045109) do
+ActiveRecord::Schema.define(version: 20150122055520) do
+
+  create_table "payment_rules", force: :cascade do |t|
+    t.integer  "min_income"
+    t.integer  "max_income"
+    t.integer  "household"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
